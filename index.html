@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Issue Tracker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-lime.min.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <h5>Issue Tracker</h5>
+        </div>
+        <nav>
+            <ul class="header-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="content-container">
+            <div class="project-container">
+                <div class="project-1">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <ul class="project-list">
+                                <li>projekt1afvafdvadfvadfafadf</li>
+                                <li>projekt2</li>
+                                <li>projekt3</li>
+                                <li>projekt4</li>
+
+                            </ul>
+                        </div>
+                        <div class="mdl-cell mdl-cell--4-col">
+                            <input class="new-project-name" type="text" />
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <input class="create-project" name="project-name" type="submit" value="Create Project" />
+                        </div>
+                    </div>
+                </div>
+                <div class="project-2">
+                    <div class="mdl-grid">
+
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <select class="priority-dropdown row2">
+              <option value="" disabled="disabled" selected="selected">Priority</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+                        </div>
+                        <div class="mdl-cell mdl-cell--3-col">
+                            <div class="date-picker row2">
+                                Date-Picker
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--4-col">
+                            <input class="new-issue row2" type="text" value="fdasf" />
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <input class="create-issue row2" type="submit" value="Create Issue" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="issues">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+                            <thead>
+                                <tr class="table-head">
+                                    <th class="mdl-data-table__cell--non-numeric">Inhalt</th>
+                                    <th class="date">Datum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="mdl-data-table__cell--non-numeric">inhalt 1: titel</td>
+                                    <td>datum</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="mdl-mega-footer__bottom-section ">
+            <ul class="mdl-mega-footer__link-list ">
+                <li><a href="# ">Privacy</a></li>
+                <li><a href="# ">Terms and Conditions</a></li>
+                <li><a href="# ">Feedback</a></li>
+            </ul>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
