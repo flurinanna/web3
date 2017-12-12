@@ -129,9 +129,7 @@ body > div > div > div.project-container > div.project-1 > div > div.mdl-cell.md
     background-color: #fff;
 }
 
-.donetodo {
-    background-color: #fff;
-}
+
 
 
 body > div > div > div.issues > div > div > table > thead > tr > th:nth-child(1) {}
