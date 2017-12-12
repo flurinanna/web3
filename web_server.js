@@ -32,6 +32,7 @@ function renderResponse(filename, response) {
     })
 }
 
+var port = process.env.PORT || 8080;
 
 http.createServer(function (request, response) {
     var uri = url.parse(request.url).pathname,
@@ -50,4 +51,4 @@ http.createServer(function (request, response) {
 
 
     })
-}).listen(8080)
+}).listen(port)
