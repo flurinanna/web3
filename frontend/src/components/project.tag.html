@@ -1,0 +1,29 @@
+<project>
+    <li onclick={ selectProject } class=" { selected : active } " data-lol="{id}"> <i class="fa fa-trash-o trash" aria-hidden="true" onclick={ deleteProject }></i> { title } </li>
+
+
+
+
+    <script>
+        active = false
+        this.selectProject = function(el) {
+            active = !active;
+            console.log("active is ", active)
+            if (active)
+                this.parent.parent.selectProject(this);
+            else
+                this.parent.parent.selectProject(false);
+
+            this.update();
+
+        };
+
+
+        this.deleteProject = function() {
+            this.parent.deleteProject(this);
+        }
+
+    </script>
+
+
+</project>

@@ -1,0 +1,29 @@
+<project_form>
+    <div class="mdl-cell mdl-cell--4-col">
+        <input class="new-project-name" type="text" value="" ref="title" />
+    </div>
+    <div class="mdl-cell mdl-cell--2-col">
+        <input class="create-project" id="save_project" name="project-name" type="submit" onclick={submit} value="Create Project" />
+    </div>
+
+
+
+    <script>
+        console.log(opts);
+        var project = opts.project;
+
+        submit(e) {
+            e.preventDefault();
+            if (this.refs.title.value) {
+                project.add({
+                    "title": this.refs.title.value,
+                });
+                this.refs.title.value = '';
+            }
+        }
+
+    </script>
+
+
+
+</project_form>

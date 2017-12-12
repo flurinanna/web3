@@ -1,0 +1,71 @@
+<script>
+    $(function() {
+        $("#datepicker").datepicker();
+    });
+
+</script>
+
+
+<todoForm>
+    <div class="project-2" id="todoForm">
+        <div class="mdl-grid">
+            <form action="/todo" method="post">
+
+                <div class="mdl-cell mdl-cell--3-col">
+                    <select class="priority-dropdown row2" ref="prio">
+              <option value="" disabled="disabled" selected="selected" >Priority</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+                </div>
+                <div class="mdl-cell mdl-cell--3-col">
+                    <div class="date-picker row2">
+                        Date: <input type="text" id="datepicker" ref="date" value="">
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col" id="datum">
+                    <input class="new-issue row2" type="text" value="" ref="title" />
+                </div>
+                <div class="mdl-cell mdl-cell--2-col" id="issue">
+                    <input id="save_todo" class="create-issue row2" onclick={submit} type="submit" value="Create Issue" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        console.log(opts);
+        var todo = opts.todo;
+        var project = opts.project;
+
+        submit(e) {
+
+            var date = new Date(this.refs.date.value);
+
+            e.preventDefault();
+            if (this.refs.title.value && this.refs.date.value && this.refs.prio.value && todo.selectedProject.title) {
+                todo.add({
+                    "done": false,
+                    "priority": this.refs.prio.value,
+                    "title": this.refs.title.value,
+                    "due_date": date.toISOString(),
+                    "project": todo.selectedProject.title,
+                    "project_id": todo.selectedProject.id,
+                    "project_client_id": todo.selectedProject.client_id
+                });
+                this.refs.title.value = '';
+                this.refs.date.value = '';
+                this.refs.prio.value = '';
+                todo.selectedProject.title = '';
+            } else {
+                alert("choose more");
+            }
+        }
+
+    </script>
+</todoForm>

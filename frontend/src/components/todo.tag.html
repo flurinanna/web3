@@ -1,0 +1,23 @@
+<todo>
+
+    <td class="mdl-data-table__cell--non-numeric">
+        <input type="checkbox" checked={ done } onclick={ doneTodo } /> { title }
+    </td>
+    <td> { priority } </td>
+    <td> { due_date.substring(0, 10) } </td>
+    <td><i class="fa fa-trash-o" aria-hidden="true" onclick={ deleteTodo }></i></td>
+    <td> { project } </td>
+
+    <script>
+        this.deleteTodo = function() {
+            this.parent.deleteTodo(this);
+        }
+
+        this.doneTodo = function() {
+            this.parent.doneTodo(this);
+        }
+
+    </script>
+
+
+</todo>

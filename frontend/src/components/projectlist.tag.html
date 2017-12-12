@@ -1,0 +1,38 @@
+<projectlist>
+    <ul class="project-list mdl-cell mdl-cell--6-col">
+        <project each="{ allProjects() }"></project>
+    </ul>
+
+    <style>
+        projectlist {
+            list-style: none;
+            border: 1px solid #555;
+            padding: 3px;
+            overflow-y: scroll;
+            align-self: stretch;
+            width: 30vw;
+        }
+
+        .project-list {
+            width: 90%;
+        }
+
+    </style>
+
+    <script>
+        var project = opts.project;
+
+        // return all projects
+        allProjects() {
+            return project.all();
+        }
+
+        deleteProject(model) {
+            project.delete(model);
+            this.update();
+        }
+
+    </script>
+
+
+</projectlist>

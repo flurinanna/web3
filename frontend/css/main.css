@@ -1,0 +1,146 @@
+/* global */
+
+html {
+    box-shadow: 0 0 0 20px #555 inset;
+    background-color: azure;
+    font-family: helvetica, GillSans, Calibri, Trebuchet, sans-serif;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.4rem;
+}
+
+
+/* header */
+
+.header {
+    display: flex;
+    background-color: #555;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    height: 8vh;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-nav {}
+
+.header-nav > li {
+    display: inline-block;
+    padding: 0 1em;
+}
+
+.header-nav a {
+    color: #fff;
+}
+
+.header-nav > li a:hover {
+    color: #c9ff14;
+}
+
+.header-nav > li + li {
+    border-left: 1px solid azure;
+}
+
+.logo {
+    position: fixed;
+    left: 20px;
+    font-size: 1em;
+}
+
+.container {
+    display: flex;
+    padding-top: 8vh;
+    height: 84vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.content-container {
+    border: 1px solid #555;
+    height: 70vh;
+    width: 80%;
+    margin-top: 8vh;
+}
+
+.project-2 {
+    overflow-y: scroll;
+    align-self: stretch;
+}
+
+
+body > div > div > div.project-container > div.project-1 > div > div.mdl-cell.mdl-cell--6-col > ul > li:nth-child(1) {
+    border-top: 0px;
+
+}
+
+.project-list li {
+    border-top: 0.5px dashed #555;
+}
+
+.project-list li:hover {
+    background-color: #fff;
+}
+
+
+.new-project-name,
+.new-issue {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+.create-project:hover,
+.create-issue:hover {
+    color: #c9ff14;
+}
+
+.create-project,
+.create-issue {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+.priority-dropdown {
+    background-color: rgba(255, 255, 255, 1);
+    color: #555;
+    font-size: 0.9em;
+}
+
+#ui-datepicker-div {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.mdl-data-table {
+    max-width: 100%;
+    min-width: 70%;
+    border: 1px solid #555;
+}
+
+
+.selected {
+    background-color: #fff;
+}
+
+.donetodo {
+    background-color: #fff;
+}
+
+
+body > div > div > div.issues > div > div > table > thead > tr > th:nth-child(1) {}
+
+body > div > div > div.issues > div > div > table > thead > tr > th.mdl-data-table__cell--non-numeric {}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+/* list

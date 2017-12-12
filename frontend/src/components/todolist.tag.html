@@ -1,0 +1,83 @@
+<todoList>
+
+    <div class="project-container">
+        <div class="project-1">
+            <div class="mdl-grid">
+                <projectlist project={ this.project }></projectlist>
+                <project_form project={ this.project }></project_form>
+            </div>
+        </div>
+    </div>
+
+
+    <todoForm todo={ this.todo } }></todoForm>
+    <div class="issues">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+                    <thead>
+                        <tr class="table-head">
+                            <th class="mdl-data-table__cell--non-numeric">Inhalt</th>
+
+                            <th class="prio">Priorität</th>
+
+                            <th class="date">Datum</th>
+                            <th class="trash">Löschen</th>
+                            <th class="project">Projekt</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr each="{ allTodos() }" data-is="todo"> </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        this.project = new ProjectCollection(this);
+        this.todo = new TodosCollection(this, this.project.collection);
+
+        console.log(this);
+        var tag = this;
+        var selectedpro = "";
+
+        // return all todos
+        allTodos() {
+            var ret = this.todo.all(selectedpro);
+            return ret;
+
+        }
+
+        deleteTodo(model) {
+            tag.todo.delete(model);
+            tag.todo.save();
+            this.update();
+        }
+
+        doneTodo(model) {
+            tag.todo.done(model);
+            tag.todo.save();
+            this.update();
+        }
+
+        selectProject(model) {
+
+            if (model) {
+                selectedpro = model.client_id;
+                tag.todo.selectedProject = model;
+                tag.todo.selectedUuid = selectedpro;
+            } else {
+                selectedpro = false;
+                tag.todo.selectedProject = false;
+                tag.todo.selectedUuid = false;
+                this.todo.selectedpro = false;
+                this.todo.riotjs_tag.update();
+            }
+            tag.update();
+        }
+
+    </script>
+</todoList>
