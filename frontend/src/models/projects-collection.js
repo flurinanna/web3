@@ -1,13 +1,10 @@
 class ProjectCollection {
 
     constructor(tag) {
-
-
         // Configuration
         this.localStorage_key = 'project';
 
         this.fetch();
-
 
         if (tag) {
             this.riotjs_tag = tag;
@@ -18,6 +15,24 @@ class ProjectCollection {
 
     all() {
         return this.collection;
+    }
+
+    setActive(model) {
+        this.collection = this.collection.map(function (project) {
+            if (project.client_id == model.client_id)
+                project.active = true;
+            else
+                project.active = false;
+        });
+
+    }
+
+    getActive(model) {
+        this.collection.filter(function (project) {
+            if (model.client_id == project.client_id) {
+                return project.active;
+            }
+        })
     }
 
     // Saving collection to localStorage

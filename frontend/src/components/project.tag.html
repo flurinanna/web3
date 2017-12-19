@@ -1,28 +1,20 @@
 <project>
-    <li onclick={ selectProject } class=" { selected : active } ">
+    <li onclick={ setActive } class=" { selected : getActive } ">
         <i class="fa fa-trash-o trash" aria-hidden="true" onclick={ deleteProject }></i> { title } </li>
 
 
     <script>
-        this.active = false;
-
-        this.on("update", function() {
-
-            console.log("updating");
-            console.log(this);
-        })
+        console.log(opts);
+        this.project_collection = opts.project_collection;
 
 
-        this.selectProject = function(el) {
-            this.active = !this.active;
-            console.log("active is ", this.active)
-            if (this.active) {
-                console.log("setting active project: ", this);
-                this.parent.parent.selectProject(this);
-                console.log("set active project: ", this);
+        this.getActive = function() {
+            return this.project_collection.getActive(this);
+        }
 
-            } else
-                this.parent.parent.selectProject(false);
+        this.setActive = function() {
+            debugger;
+            this.project_collection.setActive(this);
         };
 
 

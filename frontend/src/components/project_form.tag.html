@@ -10,12 +10,12 @@
 
     <script>
         console.log(opts);
-        var project = opts.project;
+        var project_collection = opts.project_collection;
 
         submit(e) {
             e.preventDefault();
             if (this.refs.title.value) {
-                project.add({
+                project_collection.add({
                     "title": this.refs.title.value,
                 });
                 this.refs.title.value = '';

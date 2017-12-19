@@ -2,7 +2,7 @@
   "name": "todo_server",
   "version": "1.0.0",
   "description": "A simple todo server",
-  "main": "todo_server.js",
+  "main": "web_server.js",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node todo_server.js",
+    "start": "node web_server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

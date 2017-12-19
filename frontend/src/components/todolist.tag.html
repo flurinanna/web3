@@ -3,8 +3,8 @@
     <div class="project-container">
         <div class="project-1">
             <div class="mdl-grid">
-                <projectlist project={ this.project }></projectlist>
-                <project_form project={ this.project }></project_form>
+                <projectlist project_collection={ this.project_collection }></projectlist>
+                <project_form project_collection={ this.project_collection }></project_form>
             </div>
         </div>
     </div>
@@ -37,8 +37,8 @@
 
 
     <script>
-        this.project = new ProjectCollection(this);
-        this.todo = new TodosCollection(this, this.project.collection);
+        this.project_collection = new ProjectCollection(this);
+        this.todo = new TodosCollection(this, this.project_collection.collection);
 
         console.log(this);
         var tag = this;
@@ -61,20 +61,6 @@
             tag.todo.done(model);
             tag.todo.save();
             this.update();
-        }
-
-        selectProject(model) {
-            if (model) {
-                selectedpro = model.client_id;
-                tag.todo.selectedProject = model;
-                tag.todo.selectedUuid = selectedpro;
-            } else {
-                selectedpro = false;
-                tag.todo.selectedProject = false;
-                tag.todo.selectedUuid = false;
-                this.todo.selectedpro = false;
-                this.todo.riotjs_tag.update();
-            }
         }
 
     </script>

@@ -1,6 +1,6 @@
 <projectlist>
     <ul class="project-list mdl-cell mdl-cell--6-col">
-        <project each="{ allProjects() }"></project>
+        <project each="{ allProjects() }" project_collection="{ project_collection }" foo="{true}"></project>
     </ul>
 
     <style>
@@ -20,16 +20,15 @@
     </style>
 
     <script>
-        var project = opts.project;
+        this.project_collection = opts.project_collection;
 
         // return all projects
         allProjects() {
-            return project.all();
+            return this.project_collection.all();
         }
 
         deleteProject(model) {
-            project.delete(model);
-            this.update();
+            this.project_collection.delete(model);
         }
 
     </script>
